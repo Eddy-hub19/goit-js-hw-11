@@ -3,7 +3,7 @@ import Notiflix from 'notiflix';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { fetchPics } from './js/fetchAPI';
 
-let inputValue = null;
+let inputValue = '';
 let page = 1;
 const perPage = 40;
 let lightbox = null;
@@ -31,11 +31,10 @@ async function onSearchFormSubmit(e) {
 }
 
 async function loadPics(inputValue, page) {
-  refs.loadMoreBtn.style.display = 'none';
-  debugger;
   if (inputValue === '') {
-    return;
+    return Notiflix.info('Enter, please, any value in the field');
   }
+  refs.loadMoreBtn.style.display = 'none';
 
   try {
     const pic = await fetchPics(inputValue, page, perPage);
