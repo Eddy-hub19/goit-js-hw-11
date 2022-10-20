@@ -20,7 +20,6 @@ refs.loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
 
 async function onSearchFormSubmit(e) {
   e.preventDefault();
-  refs.searchForm.reset();
   refs.gallery.innerHTML = '';
   inputValue = e.currentTarget.elements.searchQuery.value.trim();
 
@@ -32,7 +31,7 @@ async function onSearchFormSubmit(e) {
 
 async function loadPics(inputValue, page) {
   if (inputValue === '') {
-    return Notiflix.info('Enter, please, any value in the field');
+    return;
   }
   refs.loadMoreBtn.style.display = 'none';
 
@@ -56,7 +55,7 @@ async function loadPics(inputValue, page) {
 
     return pic;
   } catch (error) {
-    console.log(error);
+    console.log(error.name);
   } finally {
     refs.searchForm.reset();
   }
