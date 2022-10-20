@@ -31,7 +31,7 @@ async function onSearchFormSubmit(e) {
 
 async function loadPics(inputValue, page) {
   if (inputValue === '') {
-    return;
+    return Notiflix.Notify.warning('Enter, please, any value in the field.');
   }
   refs.loadMoreBtn.style.display = 'none';
 
@@ -55,7 +55,7 @@ async function loadPics(inputValue, page) {
 
     return pic;
   } catch (error) {
-    console.log(error.name);
+    console.log(error);
   } finally {
     refs.searchForm.reset();
   }
