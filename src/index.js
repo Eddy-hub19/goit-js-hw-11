@@ -49,7 +49,7 @@ async function loadPics(inputValue, page) {
       refs.loadMoreBtn.style.display = 'block';
     }
 
-    if (stats.length === '') {
+    if (stats.length === 0) {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
