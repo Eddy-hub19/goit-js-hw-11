@@ -13,7 +13,6 @@ let lightbox = null;
 lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
-  captionPosition: 'bottom',
 });
 
 refs.loadMoreBtn.style.display = 'none';
