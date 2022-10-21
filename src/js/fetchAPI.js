@@ -18,6 +18,6 @@ export async function fetchPics(name, page, perPage) {
     const response = await axios.get(`${BASE_URL}/api/?${params}`);
     return response;
   } catch (error) {
-    return error;
+    console.log(err.response.data);
   }
 }
