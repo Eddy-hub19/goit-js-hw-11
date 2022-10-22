@@ -45,11 +45,13 @@ async function loadPics(inputValue, page) {
       Notiflix.Notify.info(
         "We're sorry, but you've reached the end of search results."
       );
+      refs.loadMoreBtn.style.display = 'none';
     } else {
       refs.loadMoreBtn.style.display = 'block';
     }
 
     if (stats.length === 0) {
+      refs.loadMoreBtn.classList.add('is-hidden');
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
